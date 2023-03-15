@@ -1,4 +1,4 @@
-# angular-job-interview-questions
+# Angular Job Interview Iuestions
 
 <details>
   <summary>1. What is Angular Framework?</summary>
@@ -21,18 +21,46 @@ so take advantage of the last developments with minimal effort. Best of all, the
 ecosystem consists of a diverse group of over 1.7 million developers, library
 authors, and content creators.
 </p>
+<a href="https://angular.io/docs">source</a>
+
 </details>
+
 <details>
-  <summary>2. What is the difference between AngularJs and Angular?</summary>
-
-<p>
-
-</p>
+<summary>2. What is the difference between AngularJs and Angular?</summary>
+<ul>
+<li>They are very different frameworks;</li>
+<li>AngularJS support has officially ended as of January 2022 and Angular is still supporting;</li>
+<li>There is no CLI in AngularJS;</li>
+<li>There is no Angular Developer Tools for AngularJS;</li>
+<li>There is no RXJS in AngularJS;</li>
+<li>There is Typescript in Angular but JS in AngularJS</li>
+<li>AngularJS does not provide mobile support while Angular supports mobile;</li>
+</ul>
+<a href="https://www.interviewbit.com/blog/difference-between-angular-and-angularjs/#:~:text=The%20main%20difference%20between%20AngularJS,dynamic%20web%20applications%20and%20SPAs.">source</a>
+<p><a href="https://angularjs.org/">AngularJS Docs</a></p>
+<p><a href="https://angular.io/docs">Angular Docs</a></p>
 </details>
 
-<p>3. What is TypeScript</p>
-<p>Write a pictorial diagram of Angular architecture?</p>
-<p>What are the key components of Angular?</p>
+<details>
+<summary>3. What is TypeScript</summary>
+TypeScript is a strongly typed programming language that builds on JavaScript. 
+TypeScript allows developer to describe a shape of object and function, create interfaces and types
+to create more safety and reliable code.
+<a href="https://www.typescriptlang.org/">source</a>
+</details>
+
+<details>
+  <summary>4. Write a pictorial diagram of Angular architecture?</summary>
+  <img src="https://angular.io/generated/images/guide/architecture/overview2.png"
+  alt="Markdown Monster icon"
+  style="margin: 10px auto; max-width: 100%" />
+<a href="https://angular.io/guide/architecture">source</a>
+</details>
+
+<details>
+<summary>5. What are the key components of Angular?</summary>
+
+</details>
 <p>What are directives?</p>
 <p>7. What are components?</p>
 <p>What are the differences between Component and Directive?</p>
@@ -78,7 +106,13 @@ authors, and content creators.
 <p>What are the utility functions provided by RxJS?</p>
 <p>What are observable creation functions?</p>
 <p>What will happen if you do not supply handler for the observer?</p>
-<p>51. What are Angular elements?</p>
+<details>
+<summary>51. What are Angular elements?</summary>
+Angular elements are the same as JavaScript Custom Components or Web Components.
+It's Web platworm feaure that allows you to create your own html tag 
+and control it with JavaScript
+</details>
+
 <p>What is the browser support of Angular Elements?</p>
 <p>What are custom elements?</p>
 <p>Do I need to bootstrap custom elements?</p>
