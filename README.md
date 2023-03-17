@@ -2,80 +2,255 @@
 
 <details>
   <summary>1. What is Angular Framework?</summary>
-<p>
-  Angular is an application-design framework and development platform for creating efficient and sophisticated single-page apps
-</p>
-<p>
-  Angular is a development platform, built on Typescript. As a platform, Angular incudes:
-</p>
-<ul>
-<li>A component-based framework for building scalable web applications</li>
-<li>A collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication and more</li>
-<li>A suite of developer tools to help you develop, build, test, and update your code</li>
-</ul>
-<p>
-With Angular, you are taking advantage of a platform 
-that can scale form single-developer projects to enterprise-level 
-applications. Angular is design to make updating as straightforward as possible,
-so take advantage of the last developments with minimal effort. Best of all, the Angular
-ecosystem consists of a diverse group of over 1.7 million developers, library
-authors, and content creators.
-</p>
-<a href="https://angular.io/docs">source</a>
-
+  <p>
+    Angular is an application-design framework and development platform for creating efficient and sophisticated single-page apps
+  </p>
+  <p>
+    Angular is a development platform, built on Typescript. As a platform, Angular incudes:
+  </p>
+  <ul>
+    <li>A component-based framework for building scalable web applications</li>
+    <li>A collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication and more</li>
+    <li>A suite of developer tools to help you develop, build, test, and update your code</li>
+  </ul>
+  <p>
+    With Angular, you are taking advantage of a platform 
+    that can scale form single-developer projects to enterprise-level 
+    applications. Angular is design to make updating as straightforward as possible,
+    so take advantage of the last developments with minimal effort. Best of all, the Angular
+    ecosystem consists of a diverse group of over 1.7 million developers, library
+    authors, and content creators.
+  </p>
+  <div><a href="https://angular.io/docs">source</a></div>
 </details>
 
 <details>
-<summary>2. What is the difference between AngularJs and Angular?</summary>
-<ul>
-<li>They are very different frameworks;</li>
-<li>AngularJS support has officially ended as of January 2022 and Angular is still supporting;</li>
-<li>There is no CLI in AngularJS;</li>
-<li>There is no Angular Developer Tools for AngularJS;</li>
-<li>There is no RXJS in AngularJS;</li>
-<li>There is Typescript in Angular but JS in AngularJS</li>
-<li>AngularJS does not provide mobile support while Angular supports mobile;</li>
-</ul>
-<a href="https://www.interviewbit.com/blog/difference-between-angular-and-angularjs/#:~:text=The%20main%20difference%20between%20AngularJS,dynamic%20web%20applications%20and%20SPAs.">source</a>
-<p><a href="https://angularjs.org/">AngularJS Docs</a></p>
-<p><a href="https://angular.io/docs">Angular Docs</a></p>
+  <summary>2. What is the difference between AngularJs and Angular?</summary>
+  <ul>
+    <li>They are very different frameworks;</li>
+    <li>AngularJS support has officially ended as of January 2022 and Angular is still supporting;</li>
+    <li>There is no CLI in AngularJS;</li>
+    <li>There is no Angular Developer Tools for AngularJS;</li>
+    <li>There is no RXJS in AngularJS;</li>
+    <li>There is Typescript in Angular but JS in AngularJS</li>
+    <li>AngularJS does not provide mobile support while Angular supports mobile;</li>
+  </ul>
+  <div><a href="https://www.interviewbit.com/blog/difference-between-angular-and-angularjs/#:~:text=The%20main%20difference%20between%20AngularJS,dynamic%20web%20applications%20and%20SPAs.">source</a></div>
+  <div><a href="https://angularjs.org/">AngularJS Docs</a></div>
+  <div><a href="https://angular.io/docs">Angular Docs</a></div>
 </details>
 
 <details>
-<summary>3. What is TypeScript</summary>
-TypeScript is a strongly typed programming language that builds on JavaScript. 
-TypeScript allows developer to describe a shape of object and function, create interfaces and types
-to create more safety and reliable code.
-<a href="https://www.typescriptlang.org/">source</a>
+  <summary>3. What is TypeScript</summary>
+  <p>
+    TypeScript is a strongly typed programming language that builds on JavaScript. 
+    TypeScript allows developer to describe a shape of object and function, create interfaces and types
+    to create more safety and reliable code.
+  </p>
+  <div><a href="https://www.typescriptlang.org/">source</a></div>
 </details>
 
 <details>
   <summary>4. Write a pictorial diagram of Angular architecture?</summary>
-  <img src="https://angular.io/generated/images/guide/architecture/overview2.png"
-  alt="Markdown Monster icon"
-  style="margin: 10px auto; max-width: 100%" />
-<a href="https://angular.io/guide/architecture">source</a>
+  <div>
+    <img src="https://angular.io/generated/images/guide/architecture/overview2.png"
+    alt="Angular architecture"
+    style="margin: 10px auto; max-width: 100%" />
+  </div>
+  <div><a href="https://angular.io/guide/architecture">source</a></div>
 </details>
 
 <details>
-<summary>5. What are the key components of Angular?</summary>
-
+  <summary>5. What are the key components of Angular?</summary>
+  <p>These components are the keys of Angular</p>
+  <ul>
+    <li>Components - base building block</li>
+    <li>Modules - compose the logical boundaries; way to separate logic between parts</li>
+    <li>Templates - HTML view where the data is displayed by binding control to properties</li>
+    <li>Services - categorical class which has specific set and is used to special purposes: fetching data, calculations, etc.</li>
+    <li>Metadata and decorators - helps decorate the class to configure the expected behavior.</li>
+  </ul>
 </details>
-<p>What are directives?</p>
-<p>7. What are components?</p>
-<p>What are the differences between Component and Directive?</p>
-<p>What is a template?</p>
-<p>What is a module?</p>
-<p>What are lifecycle hooks available?</p>
-<p>What is a data binding?</p>
-<p>What is metadata?</p>
-<p>What is Angular CLI?</p>
-<p>15.What is the difference between constructor and ngOnInit?</p>
-<p>What is a service</p>
-<p>What is dependency injection in Angular?</p>
-<p>How is Dependency Hierarchy formed?</p>
-<p>What is the purpose of async pipe?</p>
-<p>What is the option to choose between inline and external template file?</p>
+
+<details>
+  <summary>6. What are directives?</summary>
+  <p>
+    Directives are Angular elements that add additional behaviour to elements in application. 
+    There are several directives in Angular and you can create new if you need to. 
+  </p>
+  <p>
+    There are 2 types of directives in Angular. They are attribute directive and structural directives. 
+    You can change attribute value using Attribute directive (like width, height), and you can change
+    structure using structural directives (like *ngFor, *ngIf). Also Structural directives' names starts with the star sign.
+  </p>
+</details>
+
+<details>
+  <summary>7. What are components?</summary>
+  <p>
+    Component in Angular is a main building block of application. Component
+    contain layout, layout styles and logic to manipulate and interact with it. Each component consist of: 
+  </p>
+  <ul>
+    <li>@Component typescript decorator;</li>
+    <li>CSS selector that defines how the component is used in a template;</li>
+    <li>Template (html-template);</li>
+    <li>Styles or style files array of urls (optional)</li>
+  </ul>
+</details>
+
+<details>
+  <summary>8. What are the differences between Component and Directive?</summary>
+  <ul>
+    <li>Component has a template and directive doesn't have one;</li>
+    <li>Component creates new view and directive only adds behavior to existing view;</li>
+    <li>There are different directives used to create Component and Directive;</li>
+    <li>There can only be one component per DOM element but there can be more than one directive on a DOM element;</li>
+    <li>ViewEncapsulation can be defined in component, but it can't be defined in directives.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>9. What is a template?</summary>
+  <p>
+    Template is HTML code which is used to display data of component. Angular have data binding syntax
+    which helps to set DOM properties dynamically. Template data binding syntax includes
+    interpolation, property binding, attribute binding, class nad style binding, event binding, 
+    template reference variables, using built-in directives and Inputs and Outputs.
+  </p>
+</details>
+
+<details>
+<summary>10. What is a module?</summary>
+  <p>
+   Module is angular element and typescript class. Modules are used to separate 
+   logic parts of application and organizing code.
+  </p>
+</details>
+
+<details>
+<summary>11. What are lifecycle hooks available?</summary>
+  <div><img src="https://lh4.googleusercontent.com/jqfQIpB5PJcoOn8n9fMW466u69Fs-kS4pKMzr3nKPmLRj_T730J9MB3kBRfaI9A_T3T5PFYOsjL0lSJkl_NifKbzhOJgkZKU5bQmiZhXwz8Tcu_uT6rsSlA8gFF5hl-YBRybh0RA" alt="lifecycle hooks flow"></div>
+  <p>There are several lifecycle hooks or methods available.</p>
+  <p>Lifecycle hooks</p>
+  <ul>
+    <li>constructor</li>
+    <li>ngOnChanges</li>
+    <li>ngOnInit</li>
+    <li>ngDoCheck</li>
+    <li>ngAfterContentInit</li>
+    <li>ngAfterContentChecked</li>
+    <li>ngAfterViewInit</li>
+    <li>ngAfterViewChecked</li>
+    <li>ngDoCheck</li>
+    <li>ngDestroy</li>
+  </ul>
+</details>
+
+<details>
+<summary>12. What is a data binding?</summary>
+  <p>
+    Data binding is a mechanism in Angular that allows you to connect 
+    template's content, html tags attributes and handle tag's events.
+  </p>
+  <p>There are 3 types of data binding</p>
+  <ul>
+    <li>One-way from source to view target - <i>interpolation and attribute binding</i></li>
+    <li>One-way from view target to source - <i>event binding</i></li>
+    <li>Two-way both from source to view target and from view target to source - <i>two-way binding</i></li>
+  </ul>
+</details>
+
+<details>
+  <summary>13. What is metadata?</summary>
+  <p>
+    Metadata is used to provide additional information about a class, component, directive, or module. 
+    Angular compiler uses this info to understand how to instantiate and use these entities.
+  </p>
+  <p>
+    Metadata is a configuration object that we use when define Angular element with
+    decorator like @Component or @Directive etc.
+  </p>
+  <p>As example. Components have mandatory metadata. There are selector and template.</p>
+</details>
+
+<details>
+  <summary>14. What is Angular CLI?</summary>
+  <p>
+    Angular CLI is a command-line interface tool that you use
+    to initialize, develop, scaffold, and maintain Angular
+    application directly from a command shell.
+  </p>
+</details>
+
+<details>
+  <summary>15. What is the difference between constructor and ngOnInit?</summary>
+  <p>
+    Constructor method calls at the moment when class is instantiated 
+    and ngOnInit calls at the moment after creating class
+  </p>
+  <p>
+    When constructor called input are not available, but they are available when ngOnInit called.
+  </p>
+</details>
+
+<details>
+  <summary>16. What is a service</summary>
+  <p>
+    Service is Angular element that created to encapsulate and separate  
+    calculations, data, request methods etc and component. Services 
+    can be injectable and can be defined as dependencies.
+  </p>
+</details>
+
+<details>
+  <summary>17. What is dependency injection in Angular?</summary>
+  <p>
+    Dependency injection is a design pattern allowing delegate 
+    class creating and providing some external dependencies to some external resource.
+    Dependency Injection in Angular is a mechanism which allows developers 
+    inject defined dependencies in Angular elements (dependency consumer).
+  </p>
+</details>
+
+<details>
+  <summary>18. How is Dependency Hierarchy formed?</summary>
+  <img src="https://www.tektutorialshub.com/wp-content/uploads/2021/05/Dependency-Resolution-in-Angular-1.png" alt="Dependency Hierarchy Scheme">
+  <ol>
+    <li>Checks current component providers</li>
+    <li>Checks parent providers</li>
+    <li>Checks parent's parent's...parent's parent providers</li>
+    <li>Checks parent module providers</li>
+    <li>Checks parent's parent's...parent's parent module providers</li>
+    <li>Checks root module providers</li>
+    <li>Checks platform module providers</li>
+    <li>Sets null injector</li>
+  </ol>
+</details>
+
+<details>
+  <summary>19. What is the purpose of async pipe?</summary>
+  <p>
+  Async pipe purpose is to contain last emitted value of promise or observable.
+  In case with observable async subscribe to the observable and shows it last value.
+  When component destroys the pipe unsubscribes from the observable, 
+  so using async pipes is a good optimizing tool. 
+  </p>
+</details>
+
+<details>
+  <summary>20. What is the option to choose between inline and external template file?</summary>
+  <p>
+    The options to choose between inline and external template file are:
+  </p>
+  <ul>
+    <li>Developers team rules</li>
+    <li>Size of the template</li>
+    <li>Personal taste option</li>
+    <li>Any other circumstances</li>
+  </ul>
+</details>
+
 <p>What is the purpose of *ngFor directive?</p>
 <p>What is the purpose of ngIf directive?</p>
 <p>What happens if you use script tag inside template?</p>
