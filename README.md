@@ -251,18 +251,167 @@
   </ul>
 </details>
 
-<p>What is the purpose of *ngFor directive?</p>
-<p>What is the purpose of ngIf directive?</p>
-<p>What happens if you use script tag inside template?</p>
-<p>24. What is interpolation?</p>
-<p>What are template expressions?</p>
-<p>What are template statements?</p>
-<p>How do you categorize data binding types?</p>
-<p>What are pipes?</p>
-<p>What is a parameterized pipe?</p>
-<p>How do you chain pipes?</p>
-<p>What is a custom pipe?</p>
-<p>Give an example of custom pipe?</p>
+<details>
+  <summary>21. What is the purpose of *ngFor directive?</summary>
+  <p>
+    *ngFor is Angular built-in structure directive. It's purpose is
+    to render part of template according to every iterable object element.
+    You also can use types Observable with iterable or Promise with Iterable 
+    in combination with async pipe.
+  </p>
+  <p>
+    *ngFor has some local variables which can be useful for some cases:
+  </p>
+  <ul>
+    <li>index: number - index of current iteration element;</li>
+    <li>count: number - the length of the iterable;</li>
+    <li>first: boolean - equal true when index === 0</li>
+    <li>last: boolean - equal true when index === count</li>
+    <li>even: boolean - equal true when index % 2 === 0</li>
+    <li>odd: boolean - equal true when (index + 1) % 2 === 0</li>
+  </ul>
+</details>
+
+<details>
+  <summary>22. What is the purpose of ngIf directive?</summary>
+  <p>
+    *ngIf is Angular built-in structure directive. It's purpose is
+    to show and hide part of template according to the statement boolean value.
+    You also can use types Observable with iterable or Promise with Iterable 
+    in combination with async pipe.
+  </p>
+  <p>
+    In *ngIf directive you can define template variables using keyword as;
+  </p>
+  <p><pre><i>*ngIf="(observableValue$ | async) as nonObservableValue"></i></pre>
+</details>
+
+<details>
+  <summary>23. What happens if you use script tag inside template?</summary>
+  <p>
+    The script tag is can be placed, but can't be performed. Angular have a 
+    mechanism to detect script tags. Then Angular just removes those tags.
+  </p>
+</details>
+
+<details>
+  <summary>24. What is interpolation?</summary>
+  <p>
+    Interpolation is a part of Angular data-binding. Interpolation
+    is a one-way state to template view data binding. It allows
+    developer add text to template using component's public properties
+    and double curly brackets: 
+  </p>
+  <p><pre>{{ publicProp }}</pre>
+</details>
+
+<details>
+  <summary>25. What are template expressions?</summary>
+  <p>
+    Template expressions are expressions that are allowed to make in component's template.
+    For example it can be property value, get property value, method execution result.
+  </p>
+</details>
+
+<details>
+  <summary>26. What are template statements?</summary>
+  <p></p>
+  <p>
+    Template statements are methods or properties that you can use in your HTML to respond to user events.
+    For example you can set new value to a variable assignment operator 
+  </p>
+  <p><pre> some-tag (click)="boolProp = !boolProp"</pre>
+  <p>Some of the expressions are not allowed in templates:</p>
+  <ul>
+    <li>new operator</li>
+    <li>++ and --</li>
+    <li>+= and -=</li>
+    <li>bitwise operator & and |</li>
+    <li>the pipe operator</li>
+  </ul>
+</details>
+
+
+<details>
+  <summary>27. How do you categorize data binding types?</summary>
+  <p>Quantity of ways binding</p>
+  <ul>
+    <li>
+      <p>One-way binding</p>
+      <ul>
+        <li>
+          <p>State to template view</p>
+          <ul>
+            <li>Interpolation</li>
+            <li>Attribute binding</li>
+          </ul>
+        </li>
+        <li>
+          <p>Template view to template</p>
+          <ul>
+            <li>Event binding</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Two-way binding</li>
+  </ul>
+</details>
+
+<details>
+  <summary>28. What are pipes?</summary>
+  <p>
+    Pipe is Angular element and pipe is a simple function that can be used in
+    template expressions. It's defined with @Pipe decorator in it's class
+    have to implements transform method. Pipe's purpose is to 
+    map values in a template view via special syntax:
+  </p>
+  <p><pre>valueToMap | myPipe</pre>
+  <p>
+    There are several pipes built-in in Angular. For example async,
+    json, uppercase, keyvalue, date pipe and others.
+  </p>
+  <p>
+    Developers are also can create their own custom pipes.
+  </p>
+</details>
+
+<details>
+  <summary>29. What is a parameterized pipe?</summary>
+  <p>
+    Parameterized pipe is a pipe that can take arguments to map its value.
+  </p>
+</details>
+
+<details>
+  <summary>30. How do you chain pipes?</summary>
+  <p>
+    In template expressions we write a statement we want to map using pipe.
+    Then we consequently write pipes splitting them with vertical line '|'.
+  </p>
+  <p><pre>{{ prop | pipe1 | pipe2 | pipe3 }}</pre>
+</details>
+
+<details>
+  <summary>31. What is a custom pipe?</summary>
+  <p>
+    Custom pipe is Angular element and a simple function that can be used in
+    template expressions. It's defined with @Pipe decorator in it's class
+    have to implements transform method.
+  </p>
+  <p>
+    Custom pipe also can be created using Angular CLI command
+  </p>
+  <p><pre>ng generate pipe [name]</pre>
+  <p>or</p>
+  <p><pre>ng generate p [name]</pre>
+
+</details>
+
+<details>
+  <summary>32. Give an example of custom pipe?</summary>
+  <p>Example</p>
+</details>
 <p>What is the difference between pure and impure pipe?</p>
 <p>What is a bootstrapping module?</p>
 <p>	What are observables?</p>
@@ -331,7 +480,7 @@ and control it with JavaScript
 <p>How do you specify angular template compiler options?</p>
 <p>How do you enable binding expression validation?</p>
 <p>What is the purpose of any type cast function?</p>
-<p>What is Non null type assertion operator?</p>
+<p>What is Not null type assertion operator?</p>
 <p>What is type narrowing?</p>
 <p>How do you describe various dependencies in angular application?</p>
 <p>What is zone?</p>
