@@ -31,7 +31,7 @@
     <li>AngularJS support has officially ended as of January 2022 and Angular is still supporting;</li>
     <li>There is no CLI in AngularJS;</li>
     <li>There is no Angular Developer Tools for AngularJS;</li>
-    <li>There is no RXJS in AngularJS;</li>
+    <li>There is no RxJS in AngularJS;</li>
     <li>There is Typescript in Angular but JS in AngularJS</li>
     <li>AngularJS does not provide mobile support while Angular supports mobile;</li>
   </ul>
@@ -411,15 +411,125 @@
 <details>
   <summary>32. Give an example of custom pipe?</summary>
   <p>Example</p>
+<pre>import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'reversePipe'
+})
+export class ReverseStringPipe implements PipeTransform {
+  public transform(value: string): any {
+    return value.split('').reverse().join('');
+  }
+}
+</pre>
 </details>
-<p>What is the difference between pure and impure pipe?</p>
-<p>What is a bootstrapping module?</p>
-<p>	What are observables?</p>
-<p>What is HttpClient and its benefits?</p>
-<p>37. Explain on how to use HttpClient with an example?</p>
-<p>How can you read full response?</p>
-<p>How do you perform Error handling?</p>
-<p>What is RxJS?</p>
+
+<details>
+  <summary>33. What is the difference between pure and impure pipe?</summary>
+  <p>
+    Impure pipe rerender it's transformed value every time template where pipe 
+    used rerenders. But pure pipes rerender only when pipe input value changed.
+    Pipes are pure by default.
+  </p>
+</details>
+
+<details>
+  <summary>34. What is a bootstrapping module?</summary>
+  <p>
+    Bootstrapping module or the root is a module that loads first,
+    and it is responsive for setting up the environment and starting the application. 
+  </p>
+</details>
+
+<details>
+  <summary>35. What are observables?</summary>
+  <p>
+    Observable is a class of RxJS library that built-in in Angular.
+    Observable is a lazy push collection of multiple values.
+  </p>
+  <p>
+    An observable represents a stream, or source of data that can 
+    arrive over time. You can create an observable from nearly anything, 
+    but the most common use case in RxJS is from events. 
+    This can be anything from mouse moves, button clicks, input into 
+    a text field, or even route changes. The easiest way to create 
+    an observable is through the built-in creation functions. For example, 
+    we can use the <i>fromEvent</i> helper function to create an observable of mouse 
+    click events.
+  </p>
+</details>
+
+<details>
+  <summary>36. What is HttpClient and its benefits?</summary>
+  <p>
+    HttpClient is a service provided by HttpClientModule from angular
+    common http library. HttpClient is helpful service to work with
+    http requests and their handling in RxJS way. It's also
+    easy to configure requests params, query params, and their bodies.
+  </p>
+  <p>Benefits: </p>
+  <ul>
+    <li>Contains testability features;</li>
+    <li>Provides typed request and response objects;</li>
+    <li>Intercept request and response;</li>
+    <li>Supports Observable APIs;</li>
+    <li>Supports streamlined error handling.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>37. Explain on how to use HttpClient with an example?</summary>
+  <p>
+    At first import HttpClient module to existing module. Then create
+    service where you will list your requests methods. In the service inject
+    the HttpClient service. Create a typed request your logic needs. 
+  </p>
+  <pre>
+constructor(private http: HttpClient) {}
+
+    public getCats(): Observable<ICat[]> {
+      return this.http.get<ICat[]>(this.catBaseUrl + 'images/search', {
+        params: {
+          api_key: this.catApiKey,
+          limit: this.catsQuantityLimit,
+          mime_types: 'jpg'
+      },
+    });
+</pre>
+</details>
+
+<details>
+  <summary>38. How can you read full response?</summary>
+  <p>To get full response you have to set parameter like this.</p>
+  <pre>
+// observe?: 'body' | 'events' | 'response'
+
+public getReq(): MyType {
+  return this.http.get(this.reqUrl, { observe: 'response' });
+}
+</pre>
+</details>
+
+<details>
+  <summary>39. How do you perform Error handling?</summary>
+  <p>We handle errors using RxJS error handling operators:</p>
+  <ul>
+    <li>catch;</li>
+    <li>catchError;</li>
+    <li>retry;</li>
+    <li>retryWhen.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>40. What is RxJS?</summary>
+  <p>
+    RxJS library is a library that allows web developer use 
+    reactive programming and handle events, requests responses, and others
+    in reactive way.
+  </p>
+</details>
+
 <p>What is subscribing?</p>
 <p>What is an observable?</p>
 <p>What is an observer?</p>
@@ -433,7 +543,7 @@
 <details>
 <summary>51. What are Angular elements?</summary>
 Angular elements are the same as JavaScript Custom Components or Web Components.
-It's Web platworm feaure that allows you to create your own html tag 
+It's Web platform feature that allows you to create your own html tag 
 and control it with JavaScript
 </details>
 
