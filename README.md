@@ -31,7 +31,7 @@
     <li>AngularJS support has officially ended as of January 2022 and Angular is still supporting;</li>
     <li>There is no CLI in AngularJS;</li>
     <li>There is no Angular Developer Tools for AngularJS;</li>
-    <li>There is no RXJS in AngularJS;</li>
+    <li>There is no RxJS in AngularJS;</li>
     <li>There is Typescript in Angular but JS in AngularJS</li>
     <li>AngularJS does not provide mobile support while Angular supports mobile;</li>
   </ul>
@@ -411,15 +411,125 @@
 <details>
   <summary>32. Give an example of custom pipe?</summary>
   <p>Example</p>
+<pre>import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'reversePipe'
+})
+export class ReverseStringPipe implements PipeTransform {
+  public transform(value: string): any {
+    return value.split('').reverse().join('');
+  }
+}
+</pre>
 </details>
-<p>What is the difference between pure and impure pipe?</p>
-<p>What is a bootstrapping module?</p>
-<p>	What are observables?</p>
-<p>What is HttpClient and its benefits?</p>
-<p>37. Explain on how to use HttpClient with an example?</p>
-<p>How can you read full response?</p>
-<p>How do you perform Error handling?</p>
-<p>What is RxJS?</p>
+
+<details>
+  <summary>33. What is the difference between pure and impure pipe?</summary>
+  <p>
+    Impure pipe rerender it's transformed value every time template where pipe 
+    used rerenders. But pure pipes rerender only when pipe input value changed.
+    Pipes are pure by default.
+  </p>
+</details>
+
+<details>
+  <summary>34. What is a bootstrapping module?</summary>
+  <p>
+    Bootstrapping module or the root is a module that loads first,
+    and it is responsive for setting up the environment and starting the application. 
+  </p>
+</details>
+
+<details>
+  <summary>35. What are observables?</summary>
+  <p>
+    Observable is a class of RxJS library that built-in in Angular.
+    Observable is a lazy push collection of multiple values.
+  </p>
+  <p>
+    An observable represents a stream, or source of data that can 
+    arrive over time. You can create an observable from nearly anything, 
+    but the most common use case in RxJS is from events. 
+    This can be anything from mouse moves, button clicks, input into 
+    a text field, or even route changes. The easiest way to create 
+    an observable is through the built-in creation functions. For example, 
+    we can use the <i>fromEvent</i> helper function to create an observable of mouse 
+    click events.
+  </p>
+</details>
+
+<details>
+  <summary>36. What is HttpClient and its benefits?</summary>
+  <p>
+    HttpClient is a service provided by HttpClientModule from angular
+    common http library. HttpClient is helpful service to work with
+    http requests and their handling in RxJS way. It's also
+    easy to configure requests params, query params, and their bodies.
+  </p>
+  <p>Benefits: </p>
+  <ul>
+    <li>Contains testability features;</li>
+    <li>Provides typed request and response objects;</li>
+    <li>Intercept request and response;</li>
+    <li>Supports Observable APIs;</li>
+    <li>Supports streamlined error handling.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>37. Explain on how to use HttpClient with an example?</summary>
+  <p>
+    At first import HttpClient module to existing module. Then create
+    service where you will list your requests methods. In the service inject
+    the HttpClient service. Create a typed request your logic needs. 
+  </p>
+  <pre>
+constructor(private http: HttpClient) {}
+
+    public getCats(): Observable<ICat[]> {
+      return this.http.get<ICat[]>(this.catBaseUrl + 'images/search', {
+        params: {
+          api_key: this.catApiKey,
+          limit: this.catsQuantityLimit,
+          mime_types: 'jpg'
+      },
+    });
+</pre>
+</details>
+
+<details>
+  <summary>38. How can you read full response?</summary>
+  <p>To get full response you have to set parameter like this.</p>
+  <pre>
+// observe?: 'body' | 'events' | 'response'
+
+public getReq(): MyType {
+  return this.http.get(this.reqUrl, { observe: 'response' });
+}
+</pre>
+</details>
+
+<details>
+  <summary>39. How do you perform Error handling?</summary>
+  <p>We handle errors using RxJS error handling operators:</p>
+  <ul>
+    <li>catch;</li>
+    <li>catchError;</li>
+    <li>retry;</li>
+    <li>retryWhen.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>40. What is RxJS?</summary>
+  <p>
+    RxJS library is a library that allows web developer use 
+    reactive programming and handle events, requests responses, and others
+    in reactive way.
+  </p>
+</details>
+
 <p>What is subscribing?</p>
 <p>What is an observable?</p>
 <p>What is an observer?</p>
@@ -430,10 +540,11 @@
 <p>What are the utility functions provided by RxJS?</p>
 <p>What are observable creation functions?</p>
 <p>What will happen if you do not supply handler for the observer?</p>
+
 <details>
 <summary>51. What are Angular elements?</summary>
 Angular elements are the same as JavaScript Custom Components or Web Components.
-It's Web platworm feaure that allows you to create your own html tag 
+It's Web platform feature that allows you to create your own html tag 
 and control it with JavaScript
 </details>
 
@@ -448,17 +559,148 @@ and control it with JavaScript
 <p>What are the various kinds of directives?</p>
 <p>61. How do you create directives using CLI?</p>
 <p>Give an example for attribute directives?</p>
-<p>What is Angular Router?</p>
-<p>What is the purpose of base href tag?</p>
-<p>What are the router imports?</p>
-<p>What is router outlet?</p>
-<p>What are router links?</p>
-<p>What are active router links?</p>
-<p>What is router state?</p>
-<p>70. What are router events?</p>
-<p>What is activated route?</p>
-<p>How do you define routes?</p>
-<p>What is the purpose of Wildcard route?</p>
+
+<details>
+  <summary>63. What is Angular Router?</summary>
+  <p>
+    Angular Router is a service that provides navigation among views 
+    and URL manipulation capabilities. Router can be defined
+    using RoutingModule with array of Routes in root or in feature modules.
+  </p>
+</details>
+
+<details>
+  <summary>64. What is the purpose of base href tag?</summary>
+  <p>Base href tag specifies the base URL for all relative URLs in the page</p>
+</details>
+
+<details>
+  <summary>65. What are the router imports?</summary>
+  <p>
+    RouterModule, Routes and others classes are imported from @angular/router library.
+  </p>
+  <pre>import { RouterModule, Routes } from '@angular/router';</pre>
+</details>
+
+<details>
+  <summary>66. What is router outlet?</summary>
+  <p>
+    Router outlet is a special tag in Angular Router which allows
+    to view in it nested routes components.
+  </p>
+  <p>
+    Router outlets have input property name. Names can be used to create
+    a special route that will render its element in that router-outlet.
+  </p>
+  <p>
+    Router outlets have some outputs: 
+  </p>
+  <ul>
+    <li>activate;</li>
+    <li>deactivate;</li>
+    <li>attach - Emits an attached component instance when the RouteReuseStrategy instructs to re-attach a previously detached subtree;</li>
+    <li>detach - Emits a detached component instance when the RouteReuseStrategy instructs to detach the subtree.</li>
+  </ul>
+  <p>
+    Router outlets have some properties
+  </p>
+  <ul>
+    <li>isActivated;</li>
+    <li>component;</li>
+    <li>activatedRoute;</li>
+    <li>activatedRouteData.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>67. What are router links?</summary>
+  <p>
+    routerLink is a property like href for anchors, that 
+    defines absolute or relative path for Router Service.
+  </p>
+</details>
+
+<details>
+  <summary>68. What are active router links?</summary>
+  <p>
+    activeRouterLink is property for routerLink that allows to 
+    set custom css class for currently used routerLink anchor.
+  </p>
+</details>
+
+<details>
+  <summary>69. What is router state?</summary>
+  <p>
+    Angular RouterState is the state of the router as a tree of activated routes. 
+  </p>
+</details>
+
+<details>
+  <summary>70. What are router events?</summary>
+  <p>
+    RouterEvent is a base for events the router goes through, 
+    as opposed to events tied to a specific route. 
+    Fired one time for any given navigation.
+  </p>
+</details>
+
+<details>
+  <summary>71. What is activated route?</summary>
+  <p>
+    ActivateRoute is a class that provide access to information 
+    about a route associated with a component that is loaded in an outlet. 
+    Use to traverse the RouterState tree and extract information from nodes.
+  </p>
+
+  <pre>
+class ActivatedRoute {
+  snapshot: ActivatedRouteSnapshot
+  title: Observable&lt;string | undefined&gt;
+  url: Observable&lt;UrlSegment[]&gt;
+  params: Observable&lt;Params&gt;
+  queryParams: Observable&lt;Params&gt;
+  fragment: Observable&lt;string | null&gt;
+  data: Observable&lt;Data&gt;
+  outlet: string
+  component: Type&lt;any&gt; | null
+  routeConfig: Route | null
+  root: ActivatedRoute
+  parent: ActivatedRoute | null
+  firstChild: ActivatedRoute | null
+  children: ActivatedRoute[]
+  pathFromRoot: ActivatedRoute[]
+  paramMap: Observable&lt;ParamMap&gt;
+  queryParamMap: Observable&lt;ParamMap&gt;
+  toString(): string
+}
+  </pre>
+</details>
+
+<details>
+  <summary>72. How do you define routes?</summary>
+  <p>
+    Create array typed Route[]. Then I fill it with object with Route interface:
+    define path, component, children if we need it. Then we pass this array as argument
+    to RoutingModule forRoot method or forChild method.
+  </p>
+  <pre>
+  const routes: Routes = [{ path: 'myPath', component: MyComponent }];&lt;
+  @NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+}) </pre>
+</details>
+
+<details>
+  <summary>73. What is the purpose of Wildcard route?</summary>
+  <p>
+    Wildcard route is a special type of route
+    that used a special paths when defined. For example path "**",
+    which can be used for all non-defined URLs. We can use it to show
+    visitors who use incorrect link 404 page or redirect them to any defined page.
+  </p>
+</details>
+
 <p>Do I need a Routing Module always?</p>
 <p>What is Angular Universal?</p>
 <p>What are different types of compilation in Angular?</p>
