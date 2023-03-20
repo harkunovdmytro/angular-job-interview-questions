@@ -540,6 +540,7 @@ public getReq(): MyType {
 <p>What are the utility functions provided by RxJS?</p>
 <p>What are observable creation functions?</p>
 <p>What will happen if you do not supply handler for the observer?</p>
+
 <details>
 <summary>51. What are Angular elements?</summary>
 Angular elements are the same as JavaScript Custom Components or Web Components.
@@ -558,17 +559,148 @@ and control it with JavaScript
 <p>What are the various kinds of directives?</p>
 <p>61. How do you create directives using CLI?</p>
 <p>Give an example for attribute directives?</p>
-<p>What is Angular Router?</p>
-<p>What is the purpose of base href tag?</p>
-<p>What are the router imports?</p>
-<p>What is router outlet?</p>
-<p>What are router links?</p>
-<p>What are active router links?</p>
-<p>What is router state?</p>
-<p>70. What are router events?</p>
-<p>What is activated route?</p>
-<p>How do you define routes?</p>
-<p>What is the purpose of Wildcard route?</p>
+
+<details>
+  <summary>63. What is Angular Router?</summary>
+  <p>
+    Angular Router is a service that provides navigation among views 
+    and URL manipulation capabilities. Router can be defined
+    using RoutingModule with array of Routes in root or in feature modules.
+  </p>
+</details>
+
+<details>
+  <summary>64. What is the purpose of base href tag?</summary>
+  <p>Base href tag specifies the base URL for all relative URLs in the page</p>
+</details>
+
+<details>
+  <summary>65. What are the router imports?</summary>
+  <p>
+    RouterModule, Routes and others classes are imported from @angular/router library.
+  </p>
+  <pre>import { RouterModule, Routes } from '@angular/router';</pre>
+</details>
+
+<details>
+  <summary>66. What is router outlet?</summary>
+  <p>
+    Router outlet is a special tag in Angular Router which allows
+    to view in it nested routes components.
+  </p>
+  <p>
+    Router outlets have input property name. Names can be used to create
+    a special route that will render its element in that router-outlet.
+  </p>
+  <p>
+    Router outlets have some outputs: 
+  </p>
+  <ul>
+    <li>activate;</li>
+    <li>deactivate;</li>
+    <li>attach - Emits an attached component instance when the RouteReuseStrategy instructs to re-attach a previously detached subtree;</li>
+    <li>detach - Emits a detached component instance when the RouteReuseStrategy instructs to detach the subtree.</li>
+  </ul>
+  <p>
+    Router outlets have some properties
+  </p>
+  <ul>
+    <li>isActivated;</li>
+    <li>component;</li>
+    <li>activatedRoute;</li>
+    <li>activatedRouteData.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>67. What are router links?</summary>
+  <p>
+    routerLink is a property like href for anchors, that 
+    defines absolute or relative path for Router Service.
+  </p>
+</details>
+
+<details>
+  <summary>68. What are active router links?</summary>
+  <p>
+    activeRouterLink is property for routerLink that allows to 
+    set custom css class for currently used routerLink anchor.
+  </p>
+</details>
+
+<details>
+  <summary>69. What is router state?</summary>
+  <p>
+    Angular RouterState is the state of the router as a tree of activated routes. 
+  </p>
+</details>
+
+<details>
+  <summary>70. What are router events?</summary>
+  <p>
+    RouterEvent is a base for events the router goes through, 
+    as opposed to events tied to a specific route. 
+    Fired one time for any given navigation.
+  </p>
+</details>
+
+<details>
+  <summary>71. What is activated route?</summary>
+  <p>
+    ActivateRoute is a class that provide access to information 
+    about a route associated with a component that is loaded in an outlet. 
+    Use to traverse the RouterState tree and extract information from nodes.
+  </p>
+
+  <pre>
+class ActivatedRoute {
+  snapshot: ActivatedRouteSnapshot
+  title: Observable&lt;string | undefined&gt;
+  url: Observable&lt;UrlSegment[]&gt;
+  params: Observable&lt;Params&gt;
+  queryParams: Observable&lt;Params&gt;
+  fragment: Observable&lt;string | null&gt;
+  data: Observable&lt;Data&gt;
+  outlet: string
+  component: Type&lt;any&gt; | null
+  routeConfig: Route | null
+  root: ActivatedRoute
+  parent: ActivatedRoute | null
+  firstChild: ActivatedRoute | null
+  children: ActivatedRoute[]
+  pathFromRoot: ActivatedRoute[]
+  paramMap: Observable&lt;ParamMap&gt;
+  queryParamMap: Observable&lt;ParamMap&gt;
+  toString(): string
+}
+  </pre>
+</details>
+
+<details>
+  <summary>72. How do you define routes?</summary>
+  <p>
+    Create array typed Route[]. Then I fill it with object with Route interface:
+    define path, component, children if we need it. Then we pass this array as argument
+    to RoutingModule forRoot method or forChild method.
+  </p>
+  <pre>
+  const routes: Routes = [{ path: 'myPath', component: MyComponent }];&lt;
+  @NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+}) </pre>
+</details>
+
+<details>
+  <summary>73. What is the purpose of Wildcard route?</summary>
+  <p>
+    Wildcard route is a special type of route
+    that used a special paths when defined. For example path "**",
+    which can be used for all non-defined URLs. We can use it to show
+    visitors who use incorrect link 404 page or redirect them to any defined page.
+  </p>
+</details>
+
 <p>Do I need a Routing Module always?</p>
 <p>What is Angular Universal?</p>
 <p>What are different types of compilation in Angular?</p>
