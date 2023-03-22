@@ -530,22 +530,152 @@ public getReq(): MyType {
   </p>
 </details>
 
-<p>What is subscribing?</p>
-<p>What is an observable?</p>
-<p>What is an observer?</p>
-<p>	What is the difference between promise and observable?</p>
-<p>45. What is multicasting?</p>
-<p>How do you perform error handling in observables?</p>
-<p>What is the shorthand notation for subscribe method?</p>
-<p>What are the utility functions provided by RxJS?</p>
-<p>What are observable creation functions?</p>
-<p>What will happen if you do not supply handler for the observer?</p>
+<details>
+  <summary>41. What is subscribing?</summary>
+  <p>
+    Subscribing is a process of creating subscription of observable calling
+    observable subscribe method. After call, we get a subscription. 
+    It's a disposable object that executes observable and have only
+    one method. It's unsubscribe method that stops execution of observable
+    for current subscription.
+  </p>
+</details>
 
 <details>
-<summary>51. What are Angular elements?</summary>
-Angular elements are the same as JavaScript Custom Components or Web Components.
-It's Web platform feature that allows you to create your own html tag 
-and control it with JavaScript
+  <summary>42. What is an observable?</summary>
+  <p>
+    Observable is a data stream that emits zero or 
+    more events over time, and these events can be any type of data 
+    such as numbers, arrays, objects, or even functions.
+  </p>
+</details>
+
+<details>
+  <summary>43. What is an observer?</summary>
+  <p>
+    Observers are set of callbacks that are consumers
+    of observable emitted values. There are three types of
+    these callbacks in total:
+  </p>
+  <ul>
+    <li>for usual notification (next);</li>
+    <li>for errors;</li>
+    <li>for completion notification.</li>
+  </ul>
+
+</details>
+
+<details>
+  <summary>44. What is the difference between promise and observable?</summary>
+  <p>
+    Observables 
+  </p>
+  <ul>
+    <li>are lazy and can be called only if it has subscription;</li>
+    <li>are cancelable;</li>
+    <li>emit from zero value to infinity;</li>
+    <li>can by synchronous and asynchronous.</li>
+  </ul>
+  <p>
+    Promises
+  </p>
+  <ul>
+    <li>executes immediately;</li>
+    <li>aren't cancelable;</li>
+    <li>emit only one value;</li>
+    <li>always asynchronous.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>45. What is multicasting?</summary>
+  <p>
+    Multicasting or Hot Observables are Observables
+    which emit for all subscribers same value in even in case
+    if subscriptions were made in different time periods.
+  </p>
+  <p>
+    There are some operator in RxJS which allows developers create
+    hot observables:
+  </p>
+  <ul>
+    <li>publish;</li>
+    <li>multicast;</li>
+    <li>share;</li>
+    <li>shareReplay.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>46. How do you perform error handling in observables?</summary>
+  <p>
+    Developers handle errors in Observables using error handling RxJS operators:
+  </p>
+  <ul>
+    <li>catch</li>
+    <li>catchError</li>
+    <li>retry</li>
+    <li>retryWhen></li>
+  </ul>
+</details>
+
+<details>
+  <summary>47. What is the shorthand notation for subscribe method?</summary>
+  <p>Shorthand notation for subscribe method looks like this</p>
+  <pre>
+myObservable.subscribe(() => ... );
+</pre>
+  <p>More full notation for subscribe method can look like this</p>
+<pre>myObservable.subscribe(
+  x => console.log('Observer got a next value: ' + x),
+  err => console.error('Observer got an error: ' + err),
+  () => console.log('Observer got a complete notification')
+);</pre>
+</details>
+
+<details>
+  <summary>48. What are the utility functions provided by RxJS?</summary>
+  <p>To make beginners' life more difficult 😁</p>
+  <p>
+    Most useful utility operators in RxJS is tap(). tap() purpose
+    is to handle pipe observables, check values and do some
+    executions on Observable emit but not with subscription
+    arguments.
+  </p>
+  <p>
+    There are some more operators that allowed to create delays,
+    repeat emits, call callback when pipe execution ends, map to promise and so on.
+  </p>
+</details>
+
+<details>
+  <summary>49. What are observable creation functions?</summary>
+  <p>
+    Observable creating function are functions provided RxJs
+    that allows developer create observables from some things.
+  </p>
+  <p>
+    For example developer can create an event listener using 
+    RxJS operator fromEvent() or create an Observable from array using
+    function from()
+  </p>
+</details>
+
+<details>
+  <summary>50. What will happen if you do not supply handler for the observer?</summary>
+  <p>
+    Nothing will happen. Observables will not emit value for concrete observer
+    if there is no handler.
+  </p>
+</details>
+
+<details>
+  <summary>51. What are Angular elements?</summary>
+  <p>
+    Angular elements are the same as JavaScript Custom Components or Web Components.
+    It's Web platform feature that allows you to create your own html tag 
+    and control it with JavaScript
+  </p>
 </details>
 
 <p>What is the browser support of Angular Elements?</p>
@@ -557,7 +687,12 @@ and control it with JavaScript
 <p>How do you define typings for custom elements?</p>
 <p>What are dynamic components?</p>
 <p>What are the various kinds of directives?</p>
-<p>61. How do you create directives using CLI?</p>
+
+<details>
+  <summary>61. How do you create directives using CLI?</summary>
+  <pre>$ ng generate directive path/directive-name</pre>
+</details>
+
 <p>Give an example for attribute directives?</p>
 
 <details>
